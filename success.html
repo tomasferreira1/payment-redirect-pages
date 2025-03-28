@@ -36,13 +36,15 @@
       font-size: 3rem;
       margin-bottom: 15px;
     }
-    .link {
+    a.button {
+      display: inline-block;
       margin-top: 20px;
-      display: block;
-      font-size: 1rem;
-      color: #2c3e50;
-      text-decoration: underline;
-      cursor: pointer;
+      padding: 12px 20px;
+      background-color: #2ecc71;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -51,13 +53,7 @@
     <div class="checkmark">✅</div>
     <h1>Payment Successful</h1>
     <p>Thanks for your purchase!</p>
-    <p class="link" onclick="openExtension()">👉 Click here to return to the extension</p>
+    <a class="button" href="chrome-extension://hpoinlcgpagojbdopnogajlhgeocgkcb/popup.html">Open Extension</a>
   </div>
-
-  <script>
-    function openExtension() {
-      chrome.runtime.sendMessage("hpoinlcgpagojbdopnogajlhgeocgkcb", { action: "unlock" });
-    }
-  </script>
 </body>
 </html>
