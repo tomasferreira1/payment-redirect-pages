@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Payment Cancelled</title>
+  <title>Payment Successful</title>
   <style>
     body {
       margin: 0;
@@ -24,7 +24,7 @@
       max-width: 400px;
     }
     h1 {
-      color: #e74c3c;
+      color: #2ecc71;
       font-size: 2rem;
       margin-bottom: 10px;
     }
@@ -32,17 +32,32 @@
       font-size: 1.1rem;
       color: #555;
     }
-    .icon {
+    .checkmark {
       font-size: 3rem;
       margin-bottom: 15px;
+    }
+    .link {
+      margin-top: 20px;
+      display: block;
+      font-size: 1rem;
+      color: #2c3e50;
+      text-decoration: underline;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="icon">❌</div>
-    <h1>Payment Cancelled</h1>
-    <p>Your payment was not completed. You can try again whenever you're ready.</p>
+    <div class="checkmark">✅</div>
+    <h1>Payment Successful</h1>
+    <p>Thanks for your purchase!</p>
+    <p class="link" onclick="openExtension()">👉 Click here to return to the extension</p>
   </div>
+
+  <script>
+    function openExtension() {
+      chrome.runtime.sendMessage("hpoinlcgpagojbdopnogajlhgeocgkcb", { action: "unlock" });
+    }
+  </script>
 </body>
 </html>
